@@ -1,70 +1,57 @@
-# karate-formatter README
+# karate-formatter for VSCode
 
-This is the README for your extension "karate-formatter". After writing up a brief description, we recommend including the following sections.
+This extension allows formatting of Karate Feature files.
 
 ## Features
 
-Describe specific features of your extension including screenshots of your extension in action. Image paths are relative to this README file.
+- Document format support, including tables formatting
 
-For example if there is an image subfolder under your extension project workspace:
-
-\!\[feature X\]\(images/feature-x.png\)
-
-> Tip: Many popular extensions utilize animations. This is an excellent way to show off your extension! We recommend short, focused animations that are easy to follow.
+![Demo](images/demo.gif)
 
 ## Requirements
 
-If you have any requirements or dependencies, add a section describing those and how to install and configure them.
+- [Cucumber (Gherkin) Full Support](https://marketplace.visualstudio.com/items?itemName=alexkrechik.cucumberautocomplete) must be installed
+
+## How to use
+
+- Install extension
+- Open command palette
+  - Mac: Cmd + Shift + P
+  - Linux/Windows: Ctrl + Shift + P
+- Type and run `Karate Formatter: Format`
 
 ## Extension Settings
 
-Include if your extension adds any VS Code settings through the `contributes.configuration` extension point.
+Default format config:
 
-For example:
+```json
+{
+    "Ability": 0,
+    "Business Need": 0,
+    "Feature:": 0,
+    "Scenario:": 1,
+    "Background:": 1,
+    "Scenario Outline:": 1,
+    "Examples:": 2,
+    "Given": 2,
+    "When": 2,
+    "Then": 2,
+    "And": 2,
+    "But": 2,
+    "\\*": 2,
+    "\\|": 3,
+    "\"\"\"": 3,
+    "#": "relative",
+    "@": "relative"
+  }
+```
 
-This extension contributes the following settings:
+Override single values by adding them to `.vscode/settings.json`\
+(If file does not exist, run `mkdir .vscode && touch .vscode/settings.json` in terminal.)
 
-* `myExtension.enable`: enable/disable this extension
-* `myExtension.thing`: set to `blah` to do something
-
-## Known Issues
-
-Calling out known issues can help limit users opening duplicate issues against your extension.
-
-## Release Notes
-
-Users appreciate release notes as you update your extension.
-
-### 1.0.0
-
-Initial release of ...
-
-### 1.0.1
-
-Fixed issue #.
-
-### 1.1.0
-
-Added features X, Y, and Z.
-
------------------------------------------------------------------------------------------------------------
-## Following extension guidelines
-
-Ensure that you've read through the extensions guidelines and follow the best practices for creating your extension.
-
-* [Extension Guidelines](https://code.visualstudio.com/api/references/extension-guidelines)
-
-## Working with Markdown
-
-**Note:** You can author your README using Visual Studio Code.  Here are some useful editor keyboard shortcuts:
-
-* Split the editor (`Cmd+\` on macOS or `Ctrl+\` on Windows and Linux)
-* Toggle preview (`Shift+CMD+V` on macOS or `Shift+Ctrl+V` on Windows and Linux)
-* Press `Ctrl+Space` (Windows, Linux) or `Cmd+Space` (macOS) to see a list of Markdown snippets
-
-### For more information
-
-* [Visual Studio Code's Markdown Support](http://code.visualstudio.com/docs/languages/markdown)
-* [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
-
-**Enjoy!**
+e.g.
+```json
+"cucumberautocomplete.formatConfOverride": {
+  "Feature:": 2,
+}
+```
