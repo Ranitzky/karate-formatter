@@ -1,20 +1,18 @@
 Feature: Star Wars API
 Background: 
 Given url 'https://swapi.dev/api/'
-Scenario: Character
 
+Scenario: Character
     Given path 'people/1'
       When method get
    Then status 200
      And match response.name == "Luke Skywalker"
-
 
   Scenario: Species
     Given path 'species/3/'
      When method get
       Then status 200
                 And match response.films == '#array'
-
 
 Scenario Outline: Films
     Given path '/films/<id>'
