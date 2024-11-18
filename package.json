@@ -2,7 +2,7 @@
   "name": "karate-formatter",
   "displayName": "Karate Formatter",
   "description": "Format Karate feature files",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "publisher": "ricowilcke",
   "license": "MIT",
   "engines": {
