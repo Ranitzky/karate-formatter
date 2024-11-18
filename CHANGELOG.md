@@ -1,5 +1,8 @@
 # Change Log
 
+## 0.1.3 - November, 18th 2024
+ - smaller Logo
+
 ## 0.1.2 - November, 15th 2024
  - new Logo added
  - repo is now public
